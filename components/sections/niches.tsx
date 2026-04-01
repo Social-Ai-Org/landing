@@ -45,7 +45,7 @@ const niches = [
         title: 'Automatización Logística',
         description:
             'Optimiza rutas, gestiona inventarios y coordina entregas con inteligencia artificial predictiva.',
-        image: '/niches/logistica.png',
+        image: '/niches/logistica.jpg',
     },
 ];
 

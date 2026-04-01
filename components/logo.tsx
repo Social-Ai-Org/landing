@@ -1,5 +1,5 @@
 export function LogoFull({ className = "", variant = "color" }: { className?: string; variant?: "color" | "white" }) {
-  const textColor = variant === "white" ? "#fff" : "#12071F";
+  const textColor = variant === "white" ? "#fff" : "#4f1092";
 
   return (
     <svg className={className} viewBox="210 478 660 130" xmlns="http://www.w3.org/2000/svg">
