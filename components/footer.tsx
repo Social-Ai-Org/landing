@@ -34,8 +34,21 @@ export function Footer() {
                 <div>
                     <h4 className="font-bold text-[#432C7A] mb-4">Contacto</h4>
                     <ul className="space-y-2 text-sm text-slate-500">
-                        <li>hola@socialai.com</li>
-                        <li>LinkedIn</li>
+                        <li>
+                            <Link href="mailto:social.ai.solutions.co@gmail.com" className="hover:text-[#432C7A] transition-all">
+                                social.ai.solutions.co@gmail.com
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="https://wa.me/5491125857753"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-[#432C7A] transition-all"
+                            >
+                                WhatsApp
+                            </Link>
+                        </li>
                         <li>
                             <button
                                 onClick={() => window.Calendly?.initPopupWidget({ url: CALENDLY_URL })}

@@ -11,11 +11,11 @@ export function HowItWorksSection() {
                     {/* Step 1 */}
                     <div className="relative flex flex-col items-center text-center">
                         <div className="w-20 h-20 bg-[#432c7a] text-[#b098ee] rounded-full flex items-center justify-center mb-6 relative z-10 shadow-xl">
-                            <span className="material-symbols-outlined text-3xl">input</span>
+                            <span className="material-symbols-outlined text-3xl">search</span>
                         </div>
                         <div className="hidden md:block absolute top-10 left-[60%] w-full h-0.5 border-t-2 border-dashed border-gray-300" />
-                        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>1. Entrada</h3>
-                        <p className="text-[#494550]">Capturamos datos de WhatsApp, Llamadas, APIs, archivos y tus sistemas internos de forma fluida.</p>
+                        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>1. Auditoría & Estrategia</h3>
+                        <p className="text-[#494550]">Nos metemos de lleno en tu operación para entender cómo funciona tu negocio hoy. Analizamos procesos, detectamos cuellos de botella y oportunidades de mejora, y diseñamos una estrategia de automatización 100% alineada a tus objetivos.</p>
                     </div>
                     {/* Step 2 */}
                     <div className="relative flex flex-col items-center text-center">
@@ -23,16 +23,16 @@ export function HowItWorksSection() {
                             <span className="material-symbols-outlined text-3xl">memory</span>
                         </div>
                         <div className="hidden md:block absolute top-10 left-[60%] w-full h-0.5 border-t-2 border-dashed border-gray-300" />
-                        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>2. Procesamiento</h3>
-                        <p className="text-[#494550]">Modelos de IA de última generación aplican tu lógica de negocio personalizada para analizar y decidir.</p>
+                        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>2. Implementación Inteligente</h3>
+                        <p className="text-[#494550]">Desarrollamos e integramos soluciones con inteligencia artificial adaptadas a tu lógica de negocio. Conectamos tus canales (WhatsApp, CRM, APIs, sistemas internos) y automatizamos procesos clave con precisión y escalabilidad.</p>
                     </div>
                     {/* Step 3 */}
                     <div className="relative flex flex-col items-center text-center">
                         <div className="w-20 h-20 bg-[#432c7a] text-[#b098ee] rounded-full flex items-center justify-center mb-6 relative z-10 shadow-xl">
-                            <span className="material-symbols-outlined text-3xl">task_alt</span>
+                            <span className="material-symbols-outlined text-3xl">rocket_launch</span>
                         </div>
-                        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>3. Acción</h3>
-                        <p className="text-[#494550]">Ejecución inmediata: respuesta al cliente, actualización de CRM o disparo de tareas operativas.</p>
+                        <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>3. Activación & Escalamiento</h3>
+                        <p className="text-[#494550]">Ponemos todo en marcha y optimizamos en tiempo real. Desde la interacción con clientes hasta la gestión interna, tu operación empieza a funcionar de forma automática, eficiente y lista para crecer sin fricción.</p>
                     </div>
                 </div>
             </div>

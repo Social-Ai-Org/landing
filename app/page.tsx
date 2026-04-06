@@ -7,6 +7,7 @@ import { ComparisonSection } from "@/components/sections/comparison"
 import { SocialProofSection } from "@/components/sections/social-proof"
 import { CTASection } from "@/components/sections/cta"
 import { Footer } from "@/components/footer"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
             <SocialProofSection />
             <CTASection />
             <Footer />
+            <WhatsAppButton />
         </main>
     )
 }
