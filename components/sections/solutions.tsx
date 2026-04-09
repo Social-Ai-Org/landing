@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
 
 const solutions = [
   {
@@ -48,6 +50,21 @@ const solutions = [
 ];
 
 export function SolutionsSection() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null);
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [lightbox]);
+
   return (
     <section className="py-24 bg-[#f3f3f6]" id="soluciones">
       <div className="max-w-7xl mx-auto px-6">
@@ -83,16 +100,26 @@ export function SolutionsSection() {
               <p className="text-sm text-[#494550] mb-6">
                 {sol.description}
               </p>
-              <div className="relative w-full overflow-hidden rounded-lg shadow-md h-48 mt-auto">
+              <button
+                type="button"
+                onClick={() => setLightbox({ src: sol.image, alt: sol.title })}
+                className="relative w-full overflow-hidden rounded-lg shadow-md h-48 mt-auto cursor-zoom-in group/img"
+                aria-label={`Ver ${sol.title} en grande`}
+              >
                 <Image
                   src={sol.image}
                   alt={sol.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   quality={90}
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-transform duration-300 group-hover/img:scale-105"
                 />
-              </div>
+                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 transition-colors flex items-center justify-center">
+                  <span className="material-symbols-outlined text-white opacity-0 group-hover/img:opacity-100 transition-opacity text-4xl drop-shadow-lg">
+                    zoom_in
+                  </span>
+                </div>
+              </button>
             </div>
           ))}
         </div>
@@ -103,6 +130,38 @@ export function SolutionsSection() {
           </button>
         </div>
       </div>
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-200"
+          onClick={() => setLightbox(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={lightbox.alt}
+        >
+          <button
+            type="button"
+            onClick={() => setLightbox(null)}
+            className="absolute top-4 right-4 md:top-6 md:right-6 z-10 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 transition-colors"
+            aria-label="Cerrar"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <div
+            className="relative w-full max-w-6xl max-h-[90vh] aspect-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={lightbox.src}
+              alt={lightbox.alt}
+              width={1920}
+              height={1080}
+              quality={100}
+              className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              priority
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
