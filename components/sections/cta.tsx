@@ -13,7 +13,7 @@ export function CTASection() {
                     Agendá una asesoría y detectamos juntos qué procesos podés automatizar en semanas.
                 </p>
                 <button
-                    onClick={() => window.Calendly?.initPopupWidget({ url: CALENDLY_URL })}
+                    onClick={() => { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'agendar_click' }); window.Calendly?.initPopupWidget({ url: CALENDLY_URL }); }}
                     className="bg-[#9f4200] text-white px-10 py-5 rounded-md font-bold text-xl shadow-xl hover:shadow-[#9f4200]/30 transition-all active:scale-95 inline-flex items-center gap-3 cursor-pointer"
                 >
                     Agendar asesoría gratuita

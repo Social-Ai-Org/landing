@@ -15,7 +15,7 @@ export function HeroSection() {
                         Automatizá procesos completos de tu empresa con IA
                     </h1>
                     <p className="text-xl text-[#494550] leading-relaxed max-w-xl">
-                        Diseñamos e implementamos soluciones de inteligencia artificial que automatizan operaciones, ventas y gestión interna — desde atención al cliente hasta procesamiento de datos y toma de decisiones.
+                        Diseñamos e implementamos soluciones con inteligencia artificial que automatizan tu operación de punta a punta. Atención, ventas, cobranzas, telefonía, contenido y logística, integrados a tus sistemas y listos para escalar.
                     </p>
                     <div className="space-y-3">
                         <div className="flex items-start gap-3">
@@ -37,7 +37,7 @@ export function HeroSection() {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 pt-2">
                         <button
-                            onClick={() => window.Calendly?.initPopupWidget({ url: CALENDLY_URL })}
+                            onClick={() => { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'agendar_click' }); window.Calendly?.initPopupWidget({ url: CALENDLY_URL }); }}
                             className="bg-[#9f4200] text-white px-8 py-4 rounded-md font-bold text-lg shadow-lg hover:shadow-[#9f4200]/20 transition-all active:scale-95 text-center cursor-pointer"
                         >
                             Agendar reunión

@@ -45,7 +45,7 @@ export function Header() {
                 {/* CTA + Mobile Toggle */}
                 <div className="flex items-center gap-3">
                     <button
-                        onClick={() => window.Calendly?.initPopupWidget({ url: CALENDLY_URL })}
+                        onClick={() => { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'agendar_click' }); window.Calendly?.initPopupWidget({ url: CALENDLY_URL }); }}
                         className="hidden sm:inline-flex bg-[#9f4200] text-white px-6 py-2.5 rounded-md font-semibold text-sm hover:opacity-90 active:scale-95 transition-all cursor-pointer"
                     >
                         Agendar reunión
@@ -83,7 +83,7 @@ export function Header() {
                             className="mt-2 bg-[#9f4200] text-white px-6 py-3 rounded-md font-semibold text-center hover:opacity-90 transition-all cursor-pointer"
                             onClick={() => {
                                 setMobileMenuOpen(false)
-                                window.Calendly?.initPopupWidget({ url: CALENDLY_URL })
+                                { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'agendar_click' }); window.Calendly?.initPopupWidget({ url: CALENDLY_URL }); }
                             }}
                         >
                             Agendar reunión

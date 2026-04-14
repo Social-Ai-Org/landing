@@ -3,6 +3,7 @@ declare global {
         Calendly?: {
             initPopupWidget: (opts: { url: string }) => void
         }
+        dataLayer: Record<string, unknown>[]
     }
 }
 

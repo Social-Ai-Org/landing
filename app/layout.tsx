@@ -18,7 +18,7 @@ const manrope = Manrope({
 // Google Ads optimized metadata
 export const metadata: Metadata = {
     title: 'Social AI | Automatización Empresarial con Inteligencia Artificial',
-    description: 'Diseñamos e implementamos soluciones de inteligencia artificial que automatizan operaciones, ventas y gestión interna — desde atención al cliente hasta procesamiento de datos y toma de decisiones.',
+    description: 'Diseñamos e implementamos soluciones con inteligencia artificial que automatizan tu operación de punta a punta. Atención, ventas, cobranzas, telefonía, contenido y logística, integrados a tus sistemas y listos para escalar.',
     generator: 'v0.app',
     keywords: [
         'automatización empresarial IA',

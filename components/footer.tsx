@@ -51,7 +51,7 @@ export function Footer() {
                         </li>
                         <li>
                             <button
-                                onClick={() => window.Calendly?.initPopupWidget({ url: CALENDLY_URL })}
+                                onClick={() => { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'agendar_click' }); window.Calendly?.initPopupWidget({ url: CALENDLY_URL }); }}
                                 className="hover:text-[#432C7A] transition-all cursor-pointer"
                             >
                                 Agendar Reunión
