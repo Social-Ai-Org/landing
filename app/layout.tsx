@@ -1,48 +1,58 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Manrope } from 'next/font/google'
+import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
 
-const inter = Inter({
-    subsets: ["latin"],
-    variable: "--font-inter"
-});
+const manrope = localFont({
+    variable: '--font-manrope',
+    display: 'swap',
+    src: [
+        { path: '../public/brand/fonts/Manrope-Light.ttf', weight: '300', style: 'normal' },
+        { path: '../public/brand/fonts/Manrope-Regular.ttf', weight: '400', style: 'normal' },
+        { path: '../public/brand/fonts/Manrope-SemiBold.ttf', weight: '600', style: 'normal' },
+    ],
+})
 
-const manrope = Manrope({
-    subsets: ["latin"],
-    variable: "--font-manrope",
-    weight: ["700", "800"]
-});
+const oswald = localFont({
+    variable: '--font-oswald',
+    display: 'swap',
+    src: [
+        { path: '../public/brand/fonts/Oswald-Regular.ttf', weight: '400', style: 'normal' },
+        { path: '../public/brand/fonts/Oswald-Medium.ttf', weight: '500', style: 'normal' },
+        { path: '../public/brand/fonts/Oswald-SemiBold.ttf', weight: '600', style: 'normal' },
+    ],
+})
 
-// Google Ads optimized metadata
 export const metadata: Metadata = {
-    title: 'Social AI | Automatización Empresarial con Inteligencia Artificial',
-    description: 'Diseñamos e implementamos soluciones con inteligencia artificial que automatizan tu operación de punta a punta. Atención, ventas, cobranzas, telefonía, contenido y logística, integrados a tus sistemas y listos para escalar.',
-    generator: 'v0.app',
+    title: 'Social AI · Software factory + IA a medida · Buenos Aires',
+    description:
+        'Software factory con IA a medida. Auditoría, automatizaciones y sistemas a medida para empresas que necesitan escalar sin sumar headcount.',
+    generator: 'Social AI',
     keywords: [
-        'automatización empresarial IA',
+        'software factory',
+        'IA a medida',
         'inteligencia artificial empresas',
-        'atención al cliente automatizada',
-        'automatización comercial',
-        'cobranzas inteligentes',
-        'procesamiento de datos IA',
-        'integración CRM IA',
-        'agentes inteligentes',
-        'automatización operaciones',
-        'conversión leads IA'
+        'automatización empresarial IA',
+        'agentes de IA',
+        'workflows con IA',
+        'sistemas a medida',
+        'auditoría de IA',
+        'Buenos Aires',
     ],
     openGraph: {
-        title: 'Social AI | Automatización Empresarial con IA',
-        description: 'Automatizá procesos completos de tu empresa con IA. Atención al cliente, ventas, cobranzas y operaciones.',
+        title: 'Social AI · Software factory + IA a medida',
+        description:
+            'IA a medida, software de gestión y diagnóstico estratégico. El motor operativo que tu empresa necesita para escalar.',
         type: 'website',
-        locale: 'es_ES',
+        locale: 'es_AR',
         siteName: 'Social AI',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Social AI | Automatización Empresarial con IA',
-        description: 'Automatizá procesos completos de tu empresa con IA.',
+        title: 'Social AI · Software factory + IA a medida',
+        description:
+            'IA a medida, software de gestión y diagnóstico estratégico. El motor operativo que tu empresa necesita para escalar.',
     },
     robots: {
         index: true,
@@ -56,33 +66,22 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: {
-            url: '/icon.svg',
-            type: 'image/svg+xml',
-        },
+        icon: { url: '/icon.svg', type: 'image/svg+xml' },
     },
 }
 
 export const viewport: Viewport = {
-    themeColor: '#2d1263',
+    themeColor: '#4F1092',
     width: 'device-width',
     initialScale: 1,
 }
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-P3CJKJBH'
 
     return (
         <html lang="es">
             <head>
-                {/* Material Symbols for icons */}
-                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-                {/* Google Tag Manager */}
                 {GTM_ID && (
                     <Script id="gtm-script" strategy="afterInteractive">
                         {`
@@ -95,8 +94,7 @@ export default function RootLayout({
                     </Script>
                 )}
             </head>
-            <body className={`${inter.variable} ${manrope.variable} font-sans antialiased`}>
-                {/* Google Tag Manager (noscript) */}
+            <body className={`${manrope.variable} ${oswald.variable} sa-base`}>
                 {GTM_ID && (
                     <noscript>
                         <iframe
@@ -109,7 +107,6 @@ export default function RootLayout({
                 )}
                 {children}
                 <Analytics />
-                <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
             </body>
         </html>
     )

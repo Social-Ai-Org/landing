@@ -1,69 +1,67 @@
-"use client"
-
-import Link from "next/link"
-
-const CALENDLY_URL = "https://calendly.com/social-ai-solutions-co/new-meeting-1"
-
+/* eslint-disable @next/next/no-img-element */
 
 export function Footer() {
     return (
-        <footer className="bg-[#f3f3f6] w-full pt-16 pb-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
-                <div>
-                    <span className="text-xl font-black text-[#432C7A] mb-4 block" style={{ fontFamily: 'var(--font-display)' }}>Social AI</span>
-                    <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
-                        Automatización de alto nivel para empresas que buscan liderar la era de la inteligencia artificial.
-                    </p>
+        <footer className="sa-footer">
+            <div className="sa-container">
+                <div className="sa-footer__wordmark" role="img" aria-label="Social AI" />
+                <div className="sa-footer__grid">
+                    <div className="sa-footer__col">
+                        <img
+                            src="/brand/logos/logo-negative.png"
+                            alt="Social AI"
+                            style={{ height: 22, width: 'auto', marginBottom: 16 }}
+                        />
+                        <p className="sa-footer__about">
+                            Software factory · soluciones a medida con IA · automatizaciones. Buenos Aires, Argentina.
+                        </p>
+                    </div>
+                    <div className="sa-footer__col">
+                        <h5>Producto</h5>
+                        <ul>
+                            <li>Automatizaciones</li>
+                            <li>Contenido IA</li>
+                            <li>Dashboards</li>
+                            <li>Integraciones</li>
+                        </ul>
+                    </div>
+                    <div className="sa-footer__col">
+                        <h5>Compañía</h5>
+                        <ul>
+                            <li>Equipo</li>
+                            <li>Casos</li>
+                            <li>Blog</li>
+                            <li>Carreras</li>
+                        </ul>
+                    </div>
+                    <div className="sa-footer__col">
+                        <h5>Contacto</h5>
+                        <ul>
+                            <li>
+                                <a href="https://wa.me/5491158577753" target="_blank" rel="noopener noreferrer">
+                                    +54 9 11 5857-7753
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:social.ai.solutions.co@gmail.com">social.ai.solutions.co@gmail.com</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/socialai.ok"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Instagram · @socialai.ok
+                                </a>
+                            </li>
+                            <li>Agendar demo</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h4 className="font-bold text-[#432C7A] mb-4">Soluciones</h4>
-                    <ul className="space-y-2 text-sm text-slate-500">
-                        <li><Link href="#soluciones" className="hover:text-[#432C7A] transition-all">Atención al Cliente</Link></li>
-                        <li><Link href="#soluciones" className="hover:text-[#432C7A] transition-all">Ventas y Leads</Link></li>
-                        <li><Link href="#soluciones" className="hover:text-[#432C7A] transition-all">Procesamiento de Datos</Link></li>
-                    </ul>
+                <div className="sa-footer__bottom">
+                    <span>© 2026 Social AI · Todos los derechos reservados.</span>
+                    <span>BS.AS. · ARG.</span>
                 </div>
-                <div>
-                    <h4 className="font-bold text-[#432C7A] mb-4">Compañía</h4>
-                    <ul className="space-y-2 text-sm text-slate-500">
-                        <li><Link href="#" className="hover:text-[#432C7A] transition-all">Casos de Éxito</Link></li>
-                        <li><Link href="#" className="hover:text-[#432C7A] transition-all">Privacidad</Link></li>
-                        <li><Link href="#" className="hover:text-[#432C7A] transition-all">Integraciones</Link></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 className="font-bold text-[#432C7A] mb-4">Contacto</h4>
-                    <ul className="space-y-2 text-sm text-slate-500">
-                        <li>
-                            <Link href="mailto:social.ai.solutions.co@gmail.com" className="hover:text-[#432C7A] transition-all">
-                                social.ai.solutions.co@gmail.com
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="https://wa.me/5491125857753"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-[#432C7A] transition-all"
-                            >
-                                WhatsApp
-                            </Link>
-                        </li>
-                        <li>
-                            <button
-                                onClick={() => { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'agendar_click' }); window.Calendly?.initPopupWidget({ url: CALENDLY_URL }); }}
-                                className="hover:text-[#432C7A] transition-all cursor-pointer"
-                            >
-                                Agendar Reunión
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-200">
-                <p className="text-slate-400 text-xs text-center">
-                    © {new Date().getFullYear()} Social AI. The Sovereign Interface.
-                </p>
             </div>
         </footer>
     )
