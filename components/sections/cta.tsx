@@ -2,9 +2,10 @@
 
 /* eslint-disable @next/next/no-img-element */
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const WA_NUMBER = '5491158577753'
+const WA_NUMBER = '5491125857755'
+const CALENDLY_URL = 'https://calendly.com/social-ai-solutions-co/new-meeting-1'
 const FACT_OPTIONS = ['10K — 50K', '50K — 100K', '+100K']
 
 export function CTASection() {
@@ -18,6 +19,16 @@ export function CTASection() {
     const [sent, setSent] = useState(false)
     const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) =>
         setForm({ ...form, [k]: e.target.value })
+
+    useEffect(() => {
+        const id = 'calendly-widget-script'
+        if (document.getElementById(id)) return
+        const script = document.createElement('script')
+        script.id = id
+        script.src = 'https://assets.calendly.com/assets/external/widget.js'
+        script.async = true
+        document.body.appendChild(script)
+    }, [])
 
     const waMsg = encodeURIComponent(
         `Hola Social AI! Quiero agendar una auditoría.\n` +
@@ -251,6 +262,47 @@ export function CTASection() {
                             </form>
                         )}
                     </div>
+                </div>
+
+                <div
+                    style={{
+                        marginTop: 80,
+                        paddingTop: 64,
+                        borderTop: '1px solid rgba(255,255,255,.12)',
+                        width: '100%',
+                    }}
+                >
+                    <div style={{ textAlign: 'center', marginBottom: 32 }}>
+                        <div
+                            style={{
+                                fontSize: 12,
+                                textTransform: 'uppercase',
+                                letterSpacing: '.14em',
+                                fontWeight: 600,
+                                color: '#FF6200',
+                                marginBottom: 16,
+                            }}
+                        >
+                            O agendá directamente
+                        </div>
+                        <h3
+                            style={{
+                                fontFamily: 'var(--font-display)',
+                                textTransform: 'uppercase',
+                                fontSize: 40,
+                                lineHeight: 1,
+                                color: '#fff',
+                                margin: 0,
+                            }}
+                        >
+                            Reservá una <span style={{ color: '#FF6200' }}>reunión</span>
+                        </h3>
+                    </div>
+                    <div
+                        className="calendly-inline-widget"
+                        data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&background_color=0a0a0a&text_color=ffffff&primary_color=ff6200`}
+                        style={{ minWidth: 320, height: 700, borderRadius: 24, overflow: 'hidden' }}
+                    />
                 </div>
             </div>
         </section>
