@@ -38,8 +38,8 @@ export function Footer() {
                         <h5>Contacto</h5>
                         <ul>
                             <li>
-                                <a href="https://wa.me/5491125857755" target="_blank" rel="noopener noreferrer">
-                                    +54 9 11 2585-7755
+                                <a href="https://wa.me/5491125857753" target="_blank" rel="noopener noreferrer">
+                                    +54 9 11 2585-7753
                                 </a>
                             </li>
                             <li>

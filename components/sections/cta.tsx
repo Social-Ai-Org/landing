@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from 'react'
 
-const WA_NUMBER = '5491125857755'
+const WA_NUMBER = '5491125857753'
 const CALENDLY_URL = 'https://calendly.com/social-ai-solutions-co/new-meeting-1'
 const FACT_OPTIONS = ['10K — 50K', '50K — 100K', '+100K']
 

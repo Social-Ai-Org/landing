@@ -1,7 +1,7 @@
 'use client'
 
 const WHATSAPP_URL =
-    'https://wa.me/5491125857755?text=' + encodeURIComponent('Hola Social AI! Quiero agendar una auditoría.')
+    'https://wa.me/5491125857753?text=' + encodeURIComponent('Hola Social AI! Quiero agendar una auditoría.')
 
 export function WhatsAppButton() {
     return (
